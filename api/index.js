@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
     res.send({ message: "Welcome to the email server!" });
 });
 
-app.get("/send", async (req, res) => {
+app.get("/api/send", async (req, res) => {
 
          const {data, error} = await resend.emails.send({
             from: "info@dbereznak.dev",
