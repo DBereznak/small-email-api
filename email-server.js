@@ -7,6 +7,10 @@ const app = express();
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.use(cors());
+app.get("/", (req, res) => {
+    res.send({ message: "Welcome to the email server!" });
+});
+
 app.get("/send", async (req, res) => {
 
          const {data, error} = await resend.emails.send({
